@@ -1,0 +1,13 @@
+version: "3.9"
+services:
+  page:
+    ports:
+      - target: 8080
+        published: 5719
+        protocol: tcp
+        mode: host
+    build:
+      context: ./Razor
+      dockerfile: Dockerfile
+    image: simple_server
+  

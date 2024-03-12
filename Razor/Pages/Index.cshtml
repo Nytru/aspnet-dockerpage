@@ -1,0 +1,36 @@
+﻿@page
+@model IndexModel
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Form</title>
+</head>
+<body>
+    <h1>Simple Form</h1>
+    <form method="post">
+        <label for="name">Name:</label><br />
+        <input type="text" id="name" name="name" /><br /><br />
+        
+        <label for="email">Email:</label><br />
+        <input type="email" id="email" name="email" /><br /><br />
+        
+        <label for="message">Message:</label><br />
+        <textarea id="message" name="message" rows="4" cols="50"></textarea><br /><br />
+        
+        <button type="submit">Submit</button>
+    </form>
+
+    @if (!string.IsNullOrEmpty(Model.Name))
+    {
+        <h2>Submitted Data:</h2>
+        <p><strong>Name:</strong> @Model.Name</p>
+        <p><strong>Email:</strong> @Model.Email</p>
+        <p><strong>Message:</strong> @Model.Message</p>
+    }
+</body>
+</html>
+
